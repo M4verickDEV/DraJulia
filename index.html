@@ -15,14 +15,7 @@
 
   <style>
     html{scroll-behavior:smooth}
-    /* máscara blob para a foto da seção Welcome */
-    .blob-mask{
-      -webkit-mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path d="M441.3 118.1c47.1 33.9 85.2 92.1 84.2 147.7-1 55.5-40.9 108.5-87.9 153.1-47 44.7-101.1 81-160.8 83.6-59.8 2.7-125.2-29.3-156.1-79.3-30.8-50-27.1-118 2.8-176.7C153.3 188 206 139.3 262.5 120.1c56.4-19.1 116.6-9.9 178.8-2z" fill="%23000"/></svg>');
-      mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path d="M441.3 118.1c47.1 33.9 85.2 92.1 84.2 147.7-1 55.5-40.9 108.5-87.9 153.1-47 44.7-101.1 81-160.8 83.6-59.8 2.7-125.2-29.3-156.1-79.3-30.8-50-27.1-118 2.8-176.7C153.3 188 206 139.3 262.5 120.1c56.4-19.1 116.6-9.9 178.8-2z" fill="%23000"/></svg>');
-      -webkit-mask-size:cover; mask-size:cover;
-      -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
-      -webkit-mask-position:center; mask-position:center;
-    }
+    
     /* ícones dentro de pills */
     .pill svg{width:22px;height:22px}
     /* ícones sociais menores em mobile */
@@ -49,13 +42,13 @@
 <header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
   <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
     
-    <!-- Nome da doutora com a fonte -->
+    <!-- Logo -->
     <div class="flex items-center gap-2 text-lg text-black-600">
-      <img src="Images\favicon.png" alt="Logo Dra. Julia Karen" class="w-8 h-8 object-contain">
+      <img src="Images/favicon.png" alt="Logo Dra. Julia Karen" class="w-8 h-8 object-contain">
       <span class="font-story">Dra. Julia Karen Freitas</span>
     </div>
 
-    <!-- Menu normal -->
+    <!-- Menu normal (desktop) -->
     <ul class="hidden md:flex items-center gap-6 text-sm">
       <li><a class="text-blue-600 font-semibold hover:text-yellow-600" href="#Welcome">Home</a></li>        
       <li><a class="hover:text-yellow-600" href="#department">Serviços</a></li>
@@ -64,10 +57,26 @@
       <li><a class="hover:text-yellow-600" target="_blank" href="https://wa.me/5531993838080">Contato</a></li>
     </ul>
 
-    <!-- Botão Mobile -->
-    <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200">☰</button>
+    <!-- Botão Mobile (hambúrguer animado) -->
+    <button id="menu-btn" class="md:hidden flex flex-col justify-center items-center w-10 h-10 relative group z-50">
+      <span class="block w-6 h-0.5 bg-slate-800 rounded transition-all duration-300 ease-in-out group-[.open]:rotate-45 group-[.open]:translate-y-1.5"></span>
+      <span class="block w-6 h-0.5 bg-slate-800 rounded transition-all duration-300 ease-in-out group-[.open]:opacity-0"></span>
+      <span class="block w-6 h-0.5 bg-slate-800 rounded transition-all duration-300 ease-in-out group-[.open]:-rotate-45 group-[.open]:-translate-y-1.5"></span>
+    </button>
   </nav>
 </header>
+
+<!-- Overlay -->
+<div id="overlay" class="fixed inset-0 bg-black/50 hidden z-40 transition-opacity duration-500"></div>
+
+<!-- Menu mobile fullscreen -->
+<div id="mobile-menu" class="fixed inset-0 bg-white flex flex-col items-center justify-center gap-8 text-xl font-medium hidden z-50 transition-all duration-500 ease-in-out">
+  <a href="#Welcome" class="hover:text-yellow-600">Home</a>
+  <a href="#department" class="hover:text-yellow-600">Serviços</a>
+  <a href="#avaliacoes" class="hover:text-yellow-600">Avaliações</a>
+  <a href="#sobre" class="hover:text-yellow-600">Sobre</a>
+  <a href="https://wa.me/5531993838080" target="_blank" class="hover:text-yellow-600">Contato</a>
+</div>
 
 
 
@@ -147,32 +156,42 @@
     <h2 class="text-xl font-semibold tracking-wide text-slate-500">Minhas Especialidades</h2>
     <div class="mt-2 w-10 h-1 bg-yellow-500 rounded mx-auto"></div>
 
+    <!-- Department -->
+<section id="department" class="py-16 bg-white">
+  <div class="max-w-6xl mx-auto px-4">
+    <div class="text-center mb-12">
+      <h2 class="text-3xl font-extrabold text-slate-900">Nossos Tratamentos</h2>
+      <p class="mt-4 text-slate-600">Conheça as opções para transformar seu sorriso</p>
+    </div>
+
     <!-- Pills -->
-    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
-      <div class="pill px-3 py-2 border border-slate-200 rounded-full flex items-center justify-center gap-2 text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-resina">
+    <div class="mt-6 flex flex-wrap justify-center gap-3">
+      <div class="pill px-4 py-2 border border-slate-200 rounded-full text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-resina">
         Lentes em resina
       </div>
-      <div class="pill px-3 py-2 border border-slate-200 rounded-full flex items-center justify-center gap-2 text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-faceta">
+      <div class="pill px-4 py-2 border border-slate-200 rounded-full text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-faceta">
         Faceta
       </div>
-      <div class="pill px-3 py-2 border border-slate-200 rounded-full flex items-center justify-center gap-2 text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-composta">
+      <div class="pill px-4 py-2 border border-slate-200 rounded-full text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-composta">
         Resina Composta
       </div>
     </div>
 
     <!-- Vídeos -->
-    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-      <video id="video-resina" class="rounded-lg shadow-md" autoplay muted loop playsinline>
-        <source src="videos\Lentesres.mp4" type="video/mp4">
-        Seu navegador não suporta vídeo.
+    <div class="mt-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+      <video class="rounded-lg shadow-md w-full" autoplay muted loop playsinline loading="lazy">
+        <source src="videos/Lentesres.mp4" type="video/mp4">
       </video>
-      <video id="video-faceta" class="rounded-lg shadow-md" autoplay muted loop playsinline>
-        <source src="videos\Faceta.mp4" type="video/mp4">
+      <video class="rounded-lg shadow-md w-full" autoplay muted loop playsinline loading="lazy">
+        <source src="videos/Faceta.mp4" type="video/mp4">
       </video>
-      <video id="video-composta" class="rounded-lg shadow-md" autoplay muted loop playsinline>
-        <source src="videos\Resinacomposta.mp4" type="video/mp4">
+      <video class="rounded-lg shadow-md w-full" autoplay muted loop playsinline loading="lazy">
+        <source src="videos/Resinacomposta.mp4" type="video/mp4">
       </video>
     </div>
+  </div>
+</section>
+
   
 
 <section id="antes-depois" class="py-16 bg-slate-50">
@@ -345,12 +364,7 @@
 
         </div>
 
-        <!-- Navegação -->
-        <div class="swiper-button-next text-emerald-600"></div>
-        <div class="swiper-button-prev text-emerald-600"></div>
-        <div class="swiper-pagination mt-4"></div>
-      </div>
-    </div>
+        
 
     <!-- Botão para nova avaliação -->
     <div class="mt-6">
@@ -418,6 +432,33 @@
 <script>
   lucide.createIcons();
 </script>
+
+<script>
+  const menuBtn = document.getElementById("menu-btn");
+  const mobileMenu = document.getElementById("mobile-menu");
+  const overlay = document.getElementById("overlay");
+
+  function closeMenu() {
+    menuBtn.classList.remove("open");
+    mobileMenu.classList.add("hidden");
+    overlay.classList.add("hidden");
+  }
+
+  menuBtn.addEventListener("click", () => {
+    menuBtn.classList.toggle("open");
+    mobileMenu.classList.toggle("hidden");
+    overlay.classList.toggle("hidden");
+  });
+
+  // Fechar menu se clicar no overlay
+  overlay.addEventListener("click", closeMenu);
+
+  // Fechar menu se clicar em algum link
+  document.querySelectorAll("#mobile-menu a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+</script>
+
 
 </body>
 </html>
