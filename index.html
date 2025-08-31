@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Dra. Julia Karen</title>
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" href="Images\favicon.png">
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="https://unpkg.com/lucide@latest"></script>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css" />
+
+  <style>
+    html{scroll-behavior:smooth}
+    /* máscara blob para a foto da seção Welcome */
+    .blob-mask{
+      -webkit-mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path d="M441.3 118.1c47.1 33.9 85.2 92.1 84.2 147.7-1 55.5-40.9 108.5-87.9 153.1-47 44.7-101.1 81-160.8 83.6-59.8 2.7-125.2-29.3-156.1-79.3-30.8-50-27.1-118 2.8-176.7C153.3 188 206 139.3 262.5 120.1c56.4-19.1 116.6-9.9 178.8-2z" fill="%23000"/></svg>');
+      mask-image:url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 600"><path d="M441.3 118.1c47.1 33.9 85.2 92.1 84.2 147.7-1 55.5-40.9 108.5-87.9 153.1-47 44.7-101.1 81-160.8 83.6-59.8 2.7-125.2-29.3-156.1-79.3-30.8-50-27.1-118 2.8-176.7C153.3 188 206 139.3 262.5 120.1c56.4-19.1 116.6-9.9 178.8-2z" fill="%23000"/></svg>');
+      -webkit-mask-size:cover; mask-size:cover;
+      -webkit-mask-repeat:no-repeat; mask-repeat:no-repeat;
+      -webkit-mask-position:center; mask-position:center;
+    }
+    /* ícones dentro de pills */
+    .pill svg{width:22px;height:22px}
+    /* ícones sociais menores em mobile */
+    @media (max-width: 768px){
+      .social-icon{width:7rem;height:7rem}
+      .pill svg{width:18px;height:18px}
+    }
+  </style>
+</head>
+<body class="text-slate-700 bg-white">
+
+<!-- no <head> -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Story+Script&display=swap" rel="stylesheet">
+
+<style>
+  .font-story {
+    font-family: 'Story Script', cursive;
+  }
+</style>
+
+<!-- Navbar -->
+<header class="sticky top-0 z-30 bg-white/90 backdrop-blur border-b border-slate-200">
+  <nav class="max-w-6xl mx-auto px-4 h-16 flex items-center justify-between">
+    
+    <!-- Nome da doutora com a fonte -->
+    <div class="flex items-center gap-2 text-lg text-black-600">
+      <img src="Images\favicon.png" alt="Logo Dra. Julia Karen" class="w-8 h-8 object-contain">
+      <span class="font-story">Dra. Julia Karen Freitas</span>
+    </div>
+
+    <!-- Menu normal -->
+    <ul class="hidden md:flex items-center gap-6 text-sm">
+      <li><a class="text-blue-600 font-semibold hover:text-yellow-600" href="#Welcome">Home</a></li>        
+      <li><a class="hover:text-yellow-600" href="#department">Serviços</a></li>
+      <li><a class="hover:text-yellow-600" href="#avaliacoes">Avaliações</a></li>
+      <li><a class="hover:text-yellow-600" href="#sobre">Sobre</a></li>
+      <li><a class="hover:text-yellow-600" target="_blank" href="https://wa.me/5531993838080">Contato</a></li>
+    </ul>
+
+    <!-- Botão Mobile -->
+    <button class="md:hidden inline-flex items-center justify-center w-10 h-10 rounded-lg border border-slate-200">☰</button>
+  </nav>
+</header>
+
+
+
+<section class="relative overflow-hidden min-h-screen">
+
+  <!-- Background image com opacidade -->
+  <div class="absolute inset-0">
+    <img src="Images\background.jpg" alt="Background"  
+         class="w-full h-full object-cover opacity-40"/>
+
+    <!-- Gradiente já existente continua sobre a imagem -->
+    <div class="absolute inset-0 bg-gradient-to-tr from-yellow-100/60 via-yellow-500/20 to-transparent"></div>
+  </div>
+
+  <!-- Conteúdo do Hero -->
+   <section id="Welcome" class="relative z-10">
+  <div class="max-w-6xl mx-auto px-4 min-h-screen flex items-center py-10 md:py-0">
+    <div class="grid md:grid-cols-2 items-center justify-center gap-8 w-full">
+
+      <div>
+        <h1 class="text-5xl font-extrabold text-slate-900">
+          Transformo a beleza do seu sorriso <br/>
+          <span class="text-yellow-600 underline decoration-slate-600/40">em 1 dia</span>!
+        </h1>
+        <p class="mt-4 text-base text-slate-600 max-w-xl">
+          Sou especialista em lentes de resina, estética dental e reabilitação oral em Belo Horizonte.<br/>
+          Não perca mais tempo, agende sua avaliação!
+        </p>
+        <a href="#appointment" class="mt-6 inline-flex px-5 py-2.5 bg-yellow-500 text-white rounded-md shadow hover:bg-pink-600 transition">
+          Marque sua Avaliação!
+        </a>
+
+        <!-- Social -->
+            <div class="mt-6 flex items-center gap-3 text-yellow-600">
+              <a href="https://wa.me/5531993838080" target="_blank" class="hover:opacity-80 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" class="w-8 h-8 sm:w-9 sm:h-9">
+                  <path fill="#25D366" d="M16 .395C7.163.395.005 7.553.005 16.39c0 2.89.756 5.713 2.192 8.198L0 32l7.68-2.138A15.9 15.9 0 0 0 16 32c8.837 0 16-7.162 16-16S24.837.395 16 .395zm0 29.198c-2.58 0-5.1-.676-7.3-1.956l-.524-.31-4.56 1.27 1.268-4.45-.342-.547a13.14 13.14 0 0 1-2.027-7.568c0-7.248 5.905-13.15 13.15-13.15 3.51 0 6.805 1.365 9.28 3.842a13.09 13.09 0 0 1 3.868 9.31c0 7.246-5.905 13.16-13.16 13.16z"/>
+                  <path fill="#25D366" d="M23.49 19.85c-.402-.2-2.377-1.173-2.744-1.307-.367-.134-.635-.2-.903.201-.268.402-1.037 1.307-1.27 1.574-.234.268-.469.3-.87.101-.402-.2-1.695-.624-3.23-1.99-1.194-1.065-2.002-2.377-2.236-2.779-.234-.401-.025-.619.176-.817.18-.179.402-.468.603-.701.201-.234.268-.402.402-.67.134-.268.067-.503-.033-.702-.101-.2-.903-2.178-1.237-2.977-.326-.784-.659-.678-.903-.691-.234-.012-.503-.015-.771-.015-.268 0-.701.1-1.068.503-.367.402-1.403 1.37-1.403 3.34s1.436 3.876 1.635 4.143c.201.268 2.825 4.307 6.84 6.037.957.413 1.705.659 2.287.844.959.306 1.833.263 2.52.159.768-.115 2.377-.97 2.712-1.906.335-.937.335-1.74.234-1.905-.101-.165-.369-.268-.771-.468z"/>
+                </svg>
+              </a>
+              <a href="https://www.instagram.com/juliakarenfreitas/" target="_blank" class="hover:opacity-80 transition">
+                <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" class="w-8 h-8 sm:w-9 sm:h-9">
+                  <defs>
+                    <linearGradient id="IG-gradient" x1="0" x2="1" y1="1" y2="0">
+                      <stop offset="0%" stop-color="#f58529"/>
+                      <stop offset="25%" stop-color="#dd2a7b"/>
+                      <stop offset="50%" stop-color="#8134af"/>
+                      <stop offset="75%" stop-color="#515bd4"/>
+                    </linearGradient>
+                  </defs>
+                  <path fill="url(#IG-gradient)" d="M349.33 69.33H162.67C109.72 69.33 69.33 109.72 69.33 162.67v186.66c0 52.95 40.39 93.34 93.34 93.34h186.66c52.95 0 93.34-40.39 93.34-93.34V162.67c0-52.95-40.39-93.34-93.34-93.34zM464 162.67v186.66c0 63.71-51.63 115.34-115.34 115.34H162.67C98.96 464.67 47.33 413.04 47.33 349.33V162.67C47.33 98.96 98.96 47.33 162.67 47.33h186.66c63.71 0 115.34 51.63 115.34 115.34z"/>
+                  <path fill="url(#IG-gradient)" d="M256 144c-61.76 0-112 50.24-112 112s50.24 112 112 112 112-50.24 112-112-50.24-112-112-112zm0 184c-39.76 0-72-32.24-72-72s32.24-72 72-72 72 32.24 72 72-32.24 72-72 72z"/>
+                  <circle cx="393.6" cy="118.4" r="17.06" fill="url(#IG-gradient)"/>
+                </svg>
+              </a>
+            </div>
+
+      </div>
+      
+        <img src="Images\drjuliawbdy.png" class="w-full max-h-[500px] md:max-h-[600px] rounded-full object-cover md:order-last"/>
+      
+        
+          </div>
+</section>
+  </section>
+
+  <!-- FEATURES -->
+  <section class="py-12">
+    <div class="max-w-6xl mx-auto px-4 grid gap-6 sm:grid-cols-1 md:grid-cols-3">
+      <!-- cards aqui permanecem iguais -->
+    </div>
+  </section>
+
+  <!-- DEPARTMENT PILLS -->
+<section id="department" class="py-12">
+  <div class="max-w-6xl mx-auto px-4 min-h-screen py-10 md:py-o text-center">
+    <h2 class="text-xl font-semibold tracking-wide text-slate-500">Minhas Especialidades</h2>
+    <div class="mt-2 w-10 h-1 bg-yellow-500 rounded mx-auto"></div>
+
+    <!-- Pills -->
+    <div class="mt-4 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-3">
+      <div class="pill px-3 py-2 border border-slate-200 rounded-full flex items-center justify-center gap-2 text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-resina">
+        Lentes em resina
+      </div>
+      <div class="pill px-3 py-2 border border-slate-200 rounded-full flex items-center justify-center gap-2 text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-faceta">
+        Faceta
+      </div>
+      <div class="pill px-3 py-2 border border-slate-200 rounded-full flex items-center justify-center gap-2 text-sm hover:bg-yellow-300 cursor-pointer" data-video="video-composta">
+        Resina Composta
+      </div>
+    </div>
+
+    <!-- Vídeos -->
+    <div class="mt-8 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
+      <video id="video-resina" class="rounded-lg shadow-md" autoplay muted loop playsinline>
+        <source src="videos\Lentesres.mp4" type="video/mp4">
+        Seu navegador não suporta vídeo.
+      </video>
+      <video id="video-faceta" class="rounded-lg shadow-md" autoplay muted loop playsinline>
+        <source src="videos\Faceta.mp4" type="video/mp4">
+      </video>
+      <video id="video-composta" class="rounded-lg shadow-md" autoplay muted loop playsinline>
+        <source src="videos\Resinacomposta.mp4" type="video/mp4">
+      </video>
+    </div>
+  
+
+<section id="antes-depois" class="py-16 bg-slate-50">
+  <div class="max-w-5xl mx-auto px-4 text-center">
+    <h2 class="text-xl font-semibold text-slate-500 mb-7">Antes & Depois</h2>
+
+    <div class="relative w-full max-w-3xl mx-auto overflow-hidden rounded-2xl shadow-lg">
+      <!-- Slides -->
+      <div id="carousel" class="flex transition-transform duration-500">
+        
+        <!-- Slide 1 -->
+        <div class="min-w-full flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after.png" alt="Antes" class="w-full h-80 object-cover">
+            <p class="bg-slate-800 text-white py-2">Antes</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after1.png" alt="Depois" class="w-full h-80 object-cover">
+            <p class="bg-yellow-500 text-white py-2">Depois</p>
+          </div>
+        </div>
+
+        <!-- Slide 2 -->
+        <div class="min-w-full flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after2.png" alt="Antes" class="w-full h-80 object-cover">
+            <p class="bg-slate-800 text-white py-2">Antes</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after2_2.png" alt="Depois" class="w-full h-80 object-cover">
+            <p class="bg-yellow-500 text-white py-2">Depois</p>
+          </div>
+        </div>
+
+        <!-- Slide 3 -->
+        <div class="min-w-full flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after3.png" alt="Antes" class="w-full h-80 object-cover">
+            <p class="bg-slate-800 text-white py-2">Antes</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after3_3.png" alt="Depois" class="w-full h-80 object-cover">
+            <p class="bg-yellow-500 text-white py-2">Depois</p>
+          </div>
+        </div>
+
+        <!-- Slide 4 -->
+        <div class="min-w-full flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after4.png" alt="Antes" class="w-full h-80 object-cover">
+            <p class="bg-slate-800 text-white py-2">Antes</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after4_4.png" alt="Depois" class="w-full h-80 object-cover">
+            <p class="bg-yellow-500 text-white py-2">Depois</p>
+          </div>
+        </div>
+
+        <!-- Slide 5 -->
+        <div class="min-w-full flex flex-col md:flex-row">
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after5.png" alt="Antes" class="w-full h-80 object-cover">
+            <p class="bg-slate-800 text-white py-2">Antes</p>
+          </div>
+          <div class="w-full md:w-1/2">
+            <img src="Images\b4&after5_5.png" alt="Depois" class="w-full h-80 object-cover">
+            <p class="bg-yellow-500 text-white py-2">Depois</p>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Controles -->
+      <button onclick="prevSlide()" class="absolute top-1/2 -left-1 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow">
+        ‹
+      </button>
+      <button onclick="nextSlide()" class="absolute top-1/2 -right-1 transform -translate-y-1/2 bg-white/80 hover:bg-white rounded-full p-2 shadow">
+        ›
+      </button>
+    </div>
+  </div>
+</section>
+
+<script>
+  const carousel = document.getElementById('carousel');
+  let index = 0;
+  const totalSlides = carousel.children.length;
+
+  function showSlide() {
+    carousel.style.transform = `translateX(-${index * 100}%)`;
+  }
+
+  function nextSlide() {
+    index = (index + 1) % totalSlides;
+    showSlide();
+  }
+
+  function prevSlide() {
+    index = (index - 1 + totalSlides) % totalSlides;
+    showSlide();
+  }
+
+  // Troca automática a cada 5 segundos
+  setInterval(nextSlide, 5000);
+</script>
+
+
+
+
+</section>
+
+
+
+
+
+
+
+<!-- AVALIAÇÕES CARROSSEL -->
+<section id="avaliacoes" class="py-12 bg-slate-50">
+  <div class="max-w-6xl mx-auto px-4 text-center">
+    <h2 class="text-2xl font-semibold text-slate-700">Feedback</h2>
+    <div class="mt-2 w-12 h-1 bg-emerald-500 rounded mx-auto"></div>
+
+    <!-- Swiper -->
+    <div class="mt-8">
+      <div class="swiper-container">
+        <div class="swiper-wrapper">
+
+          <!-- Slide 1 -->
+          <div class="swiper-slide bg-white rounded-xl shadow p-6 text-left">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">A</div>
+              <div class="ml-3">
+                <h4 class="font-semibold text-slate-800">Ana P.</h4>
+                <div class="flex text-yellow-400">★★★★☆</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600">
+              Atendimento excelente! Minha lente de resina ficou perfeita e o resultado superou minhas expectativas.
+            </p>
+          </div>
+
+          <!-- Slide 2 -->
+          <div class="swiper-slide bg-white rounded-xl shadow p-6 text-left">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">B</div>
+              <div class="ml-3">
+                <h4 class="font-semibold text-slate-800">Bruno S.</h4>
+                <div class="flex text-yellow-400">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600">
+              Profissionalismo e atenção impecáveis. Recomendo para quem busca estética dental de qualidade.
+            </p>
+          </div>
+
+          <!-- Slide 3 -->
+          <div class="swiper-slide bg-white rounded-xl shadow p-6 text-left">
+            <div class="flex items-center mb-4">
+              <div class="w-12 h-12 rounded-full bg-emerald-100 flex items-center justify-center text-emerald-700 font-bold">C</div>
+              <div class="ml-3">
+                <h4 class="font-semibold text-slate-800">Carla M.</h4>
+                <div class="flex text-yellow-400">★★★★★</div>
+              </div>
+            </div>
+            <p class="text-sm text-slate-600">
+              Atendimento humanizado e resultados incríveis. Me senti muito acolhida durante todo o processo.
+            </p>
+          </div>
+
+        </div>
+
+        <!-- Navegação -->
+        <div class="swiper-button-next text-emerald-600"></div>
+        <div class="swiper-button-prev text-emerald-600"></div>
+        <div class="swiper-pagination mt-4"></div>
+      </div>
+    </div>
+
+    <!-- Botão para nova avaliação -->
+    <div class="mt-6">
+      <a href="https://www.google.com/maps/place/Dra+J%C3%BAlia+Karen+-+Lente+em+Resina+em+Belo+Horizonte+%7C+Faceta+%7C+Resina+Composta+%7C+Dente+de+Resina+em+BH/@-19.9245834,-43.9274097,17z/data=!4m14!1m7!3m6!1s0xa699f20932ec93:0x530bee9b813aafab!2sDra+J%C3%BAlia+Karen+-+Lente+em+Resina+em+Belo+Horizonte+%7C+Faceta+%7C+Resina+Composta+%7C+Dente+de+Resina+em+BH!8m2!3d-19.9245834!4d-43.9248348!16s%2Fg%2F11lvnwdd62!3m5!1s0xa699f20932ec93:0x530bee9b813aafab!8m2!3d-19.9245834!4d-43.9248348!16s%2Fg%2F11lvnwdd62?entry=ttu&g_ep=EgoyMDI1MDgyNS4wIKXMDSoASAFQAw%3D%3D" 
+         target="_blank"
+         class="inline-block px-6 py-3 bg-blue-500 text-white font-semibold rounded-lg shadow hover:bg-pink-600 transition">
+        Deixe sua avaliação no Google
+      </a>
+    </div>
+  </div>
+</section>
+
+<!-- Swiper.js CDN -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.css" />
+<script src="https://cdn.jsdelivr.net/npm/swiper@9/swiper-bundle.min.js"></script>
+<script>
+  const swiper = new Swiper('.swiper-container', {
+    slidesPerView: 1,
+    spaceBetween: 20,
+    loop: true,
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+    navigation: {
+      nextEl: '.swiper-button-next',
+      prevEl: '.swiper-button-prev',
+    },
+    breakpoints: {
+      640: { slidesPerView: 1 },
+      768: { slidesPerView: 2 },
+      1024: { slidesPerView: 3 },
+    },
+  });
+</script>
+
+<!-- Footer -->
+<footer class="bg-slate-900 text-slate-300 py-10">
+  <div class="max-w-6xl mx-auto px-4 flex flex-col items-center text-center gap-4">
+
+    <!-- Logo + Nome -->
+    <div class="flex items-center gap-2">
+      <img src="Images/favicon.png" alt="Logo Dra. Julia Karen" class="w-8 h-8 object-contain">
+      <span class="font-story text-lg">Dra. Julia Karen Freitas</span>
+    </div>
+
+    <!-- Redes sociais -->
+    <div class="flex items-center gap-4">
+      <a href="https://www.instagram.com/juliakarenfreitas/" target="_blank" class="hover:text-pink-500 transition">
+        <i data-lucide="instagram" class="w-6 h-6"></i>
+      </a>
+      <a href="https://wa.me/5531993838080" target="_blank" class="hover:text-green-500 transition">
+        <i data-lucide="phone" class="w-6 h-6"></i>
+      </a>
+    </div>
+
+    <!-- Direitos -->
+    <p class="text-sm text-slate-500">R. Piauí, 345 - Santa Efigênia, Belo Horizonte - MG, 30150-320</p>
+    <p class="text-sm text-slate-500">&copy; 2025 Julia Karen. Todos os direitos reservados.</p>
+  </div>
+</footer>
+
+<!-- Inicializar os ícones -->
+<script src="https://unpkg.com/lucide@latest"></script>
+<script>
+  lucide.createIcons();
+</script>
+
+</body>
+</html>
